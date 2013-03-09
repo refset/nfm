@@ -1,0 +1,9 @@
+modules.exports = {
+  signals: {},
+  signalise: function(nf){
+    nf.func = function(){
+      return this.signals[nf.meta.name] = nf.func.apply(nf,arguments)
+    }
+  }
+
+}
